@@ -156,27 +156,6 @@ njs_symbol_constructor(njs_vm_t *vm, njs_value_t *args, njs_uint_t nargs,
     return NJS_OK;
 }
 
-
-static njs_int_t
-njs_symbol_for(njs_vm_t *vm, njs_value_t *args,
-    njs_uint_t nargs, njs_index_t unused)
-{
-    njs_internal_error(vm, "not implemented");
-
-    return NJS_ERROR;
-}
-
-
-static njs_int_t
-njs_symbol_key_for(njs_vm_t *vm, njs_value_t *args,
-    njs_uint_t nargs, njs_index_t unused)
-{
-    njs_internal_error(vm, "not implemented");
-
-    return NJS_ERROR;
-}
-
-
 static const njs_object_prop_t  njs_symbol_constructor_properties[] =
 {
     {
@@ -197,22 +176,6 @@ static const njs_object_prop_t  njs_symbol_constructor_properties[] =
         .type = NJS_PROPERTY_HANDLER,
         .name = njs_string("prototype"),
         .value = njs_prop_handler(njs_object_prototype_create),
-    },
-
-    {
-        .type = NJS_PROPERTY,
-        .name = njs_string("for"),
-        .value = njs_native_function(njs_symbol_for, 1),
-        .writable = 1,
-        .configurable = 1,
-    },
-
-    {
-        .type = NJS_PROPERTY,
-        .name = njs_string("keyFor"),
-        .value = njs_native_function(njs_symbol_key_for, 1),
-        .writable = 1,
-        .configurable = 1,
     },
 
     {

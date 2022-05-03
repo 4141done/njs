@@ -283,7 +283,7 @@ njs_module_find(njs_vm_t *vm, njs_str_t *name, njs_bool_t shared)
 
 
 njs_mod_t *
-njs_module_add(njs_vm_t *vm, njs_str_t *name)
+njs_module_add(njs_vm_t *vm, njs_str_t *name)z
 {
     njs_int_t           ret;
     njs_mod_t           *module;
